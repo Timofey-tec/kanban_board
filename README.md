@@ -68,20 +68,3 @@ src/
 **State management:** `useReducer` с 11 типизированными экшенами. Одно действие = один экшен.  
 **Persistence:** весь `localStorage`-доступ только через хук `useLocalStorage` — никогда напрямую в компонентах.
 
-## Запуск проекта локально
-
-```bash
-npm install
-npm run dev
-```
-
-Откроется на [http://localhost:5173](http://localhost:5173)
-
-```bash
-npm run build    # production-сборка → папка dist/
-npm run preview  # локальный предпросмотр production-сборки
-```
-
-## Деплой
-
-Статичная сборка, готова к деплою на Vercel / Netlify / GitHub Pages одной командой.
