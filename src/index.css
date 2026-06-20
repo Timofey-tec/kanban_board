@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+/* Enable dark mode via class strategy */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Smooth color transitions when switching themes */
+*, *::before, *::after {
+  transition-property: background-color, border-color, color;
+  transition-duration: 150ms;
+  transition-timing-function: ease;
+}
+
+/* Prevent transition on drag */
+[data-dragging] *, [data-dragging] {
+  transition: none !important;
+}
+
+/* Custom scrollbar for column card lists */
+.overflow-y-auto {
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db transparent;
+}
+.dark .overflow-y-auto {
+  scrollbar-color: #4b5563 transparent;
+}
+.overflow-y-auto::-webkit-scrollbar {
+  width: 4px;
+}
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: transparent;
+}
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
+  border-radius: 4px;
+}
+.dark .overflow-y-auto::-webkit-scrollbar-thumb {
+  background-color: #4b5563;
+}
+
+/* Line clamping utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
