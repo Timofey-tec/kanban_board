@@ -203,7 +203,7 @@ export function boardReducer(state: BoardState, action: BoardAction): BoardState
 
 export function createColumn(title: string): Column {
   return {
-    id: `col-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+    id: `col-${generateId()}`,
     title: title.trim(),
     cardIds: [],
   };
